@@ -1,33 +1,42 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 const ExpenseForm = () => {
-  // const [enteredTitle, setEnteredTitle] = useState("");
-  // const [enteredAmount, setEnteredAmount] = useState("");
-  // const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  const [userInput, setEnteredUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
+  // const [userInput, setEnteredUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
 
-  // const titleChangeHandler = (event) => {
-  //   setEnteredUserInput({ ...userInput, enteredTitle: event.target.value });
-  // };
-
-  // || RECOMMENDED SYNTAX FOR ENSURING THAT THE STATE SNAPSHOT IS ALWAYS UP TO DATE
   const titleChangeHandler = (event) => {
-    setEnteredUserInput((prevState) => {
-      return { ...prevState, enteredTitle: event.target.value };
-    });
+    setEnteredTitle(event.target.value);
   };
 
   const amountChangeHandler = (event) => {
-    setEnteredUserInput({ ...userInput, enteredAmount: event.target.value });
+    setEnteredAmount(event.target.value);
   };
+
   const dateChangeHandler = (event) => {
-    setEnteredUserInput({ ...userInput, enteredDate: event.target.value });
+    setEnteredDate(event.target.value);
   };
+
+  // || RECOMMENDED SYNTAX FOR ENSURING THAT THE STATE SNAPSHOT IS ALWAYS UP TO DATE
+  // const titleChangeHandler = (event) => {
+  //   setEnteredUserInput((prevState) => {
+  //     return { ...prevState, enteredTitle: event.target.value };
+  //   });
+  // };
+
+  // const amountChangeHandler = (event) => {
+  //   setEnteredUserInput({ ...userInput, enteredAmount: event.target.value });
+  // };
+
+  // const dateChangeHandler = (event) => {
+  // setEnteredUserInput({ ...userInput, enteredDate: event.target.value });
+  // };
   return (
     <form>
       <div className="new-expense__controls">
