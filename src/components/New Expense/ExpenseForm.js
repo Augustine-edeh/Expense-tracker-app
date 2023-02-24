@@ -11,9 +11,17 @@ const ExpenseForm = () => {
     enteredDate: "",
   });
 
+  // const titleChangeHandler = (event) => {
+  //   setEnteredUserInput({ ...userInput, enteredTitle: event.target.value });
+  // };
+
+  // || RECOMMENDED SYNTAX FOR ENSURING THAT THE STATE SNAPSHOT IS ALWAYS UP TO DATE
   const titleChangeHandler = (event) => {
-    setEnteredUserInput({ ...userInput, enteredTitle: event.target.value });
+    setEnteredUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
+    });
   };
+
   const amountChangeHandler = (event) => {
     setEnteredUserInput({ ...userInput, enteredAmount: event.target.value });
   };
